@@ -100,14 +100,3 @@ The backend runs on `http://localhost:5000` and frontend on `http://localhost:30
 - Implement rate limiting for OTP requests
 - Use strong JWT secrets
 
-## Environment Variables
-
-| Variable | Description | Example |
-|----------|-------------|---------|
-| EMAIL_SERVICE | Email service identifier | `ethereal`, `brevo` |
-| EMAIL_HOST | SMTP server host | `smtp.ethereal.email` |
-| EMAIL_PORT | SMTP server port | `587` |
-| EMAIL_USER | SMTP username | `user@example.com` |
-| EMAIL_PASS | SMTP password/API key | `your-password` |
-| JWT_SECRET | Secret for JWT signing | `your-secret-key` |
-| PORT | Backend server port | `5000` |
