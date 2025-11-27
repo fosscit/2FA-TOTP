@@ -49,7 +49,7 @@ npm install
 
 ## Email Configuration
 
-### Quick Setup (Testing)
+### Quick Setup 
 
 For development and testing, use Ethereal (auto-configured test email):
 
@@ -74,8 +74,6 @@ PORT=5000
 
 Supported services: Brevo, SendGrid, Mailgun, Gmail, Outlook, or any SMTP server.
 
-See `EASY_EMAIL_SETUP.md` for detailed configuration guides.
-
 ## Running the Application
 
 Start the backend server:
@@ -92,101 +90,6 @@ npm start
 
 The backend runs on `http://localhost:5000` and frontend on `http://localhost:3000`.
 
-## API Documentation
-
-### 1. Test Email Configuration
-```
-GET /test-email
-```
-Verifies email service configuration.
-
-**Response:**
-```json
-{
-  "message": "Email configuration is valid ✅",
-  "host": "smtp.ethereal.email",
-  "port": "587",
-  "user": "user@ethereal.email"
-}
-```
-
-### 2. Send OTP
-```
-POST /auth/send-otp
-```
-
-**Request Body:**
-```json
-{
-  "email": "user@example.com"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "OTP sent successfully",
-  "previewUrl": "https://ethereal.email/message/..." // Only for Ethereal
-}
-```
-
-### 3. Verify OTP
-```
-POST /auth/verify-otp
-```
-
-**Request Body:**
-```json
-{
-  "email": "user@example.com",
-  "otp": "123456"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "OTP verified, login successful",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-}
-```
-
-## Testing
-
-Test email configuration:
-```bash
-cd backend
-node test-otp.js recipient@example.com
-```
-
-Interactive demo:
-```bash
-node demo.js
-```
-
-## Project Structure
-
-```
-otp-login-project/
-├── backend/
-│   ├── server.js              # Main Express server
-│   ├── setup-ethereal.js      # Auto-setup test email
-│   ├── test-otp.js            # Email testing script
-│   ├── demo.js                # Interactive demo
-│   ├── .env                   # Environment configuration
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── App.js             # Main React component
-│   │   ├── App.css
-│   │   ├── index.js
-│   │   └── index.css
-│   ├── public/
-│   │   └── index.html
-│   └── package.json
-├── EASY_EMAIL_SETUP.md        # Email service setup guides
-└── README.md
-```
 
 ## Security Considerations
 
@@ -208,7 +111,3 @@ otp-login-project/
 | EMAIL_PASS | SMTP password/API key | `your-password` |
 | JWT_SECRET | Secret for JWT signing | `your-secret-key` |
 | PORT | Backend server port | `5000` |
-
-## License
-
-MIT
